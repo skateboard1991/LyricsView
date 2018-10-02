@@ -164,7 +164,7 @@ class LyricsView(context: Context, attributeSet: AttributeSet?) : View(context, 
         return lyricsItem.lyrics
     }
 
-    private fun scrollToPosition(i: Int,duration: Int=300)
+    fun scrollToPosition(i: Int,duration: Int=300)
     {
         var scrollOffset = lineHeight * i - scrollY - height / 2-speed*duration
         scrollOffset(scrollOffset,duration)
@@ -255,7 +255,7 @@ class LyricsView(context: Context, attributeSet: AttributeSet?) : View(context, 
             {
                 velocityTracker.clear()
                 velocityTracker.recycle()
-                scrollOffset(-speed,1000)
+                scrollOffset(-speed,500)
                 postDelayed(resetCallback, 2000)
             }
         }
